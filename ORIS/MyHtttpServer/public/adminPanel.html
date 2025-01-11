@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AdminPanel</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/styleAdmin.css">
+</head>
+<body>
+<header>
+    <div class="header-container">
+        <a class="template-logo">
+            <img src="images/logo-amediateka.png">
+        </a>
+        <h1 class="tittle-text">
+            AdminПенал
+        </h1>
+    </div>
+</header>
+<main>
+    <div class="main-container">
+        <div class="background-container">
+            <picture class="background-picture">
+                <source media="(max-width: 1024px) and (orientation: portrait)" srcset="images/background-siteMobile.png">
+                <source media="orientation: portrait" srcset="images/background-site.png">
+                <img src="images/background-site.png" class="setting-img">
+            </picture>
+            <div class="shadow-on-page"></div>
+            <div class="shadow-on-page-bottom"></div>
+        </div>
+        <div class="wrapper-container">
+            <h1 class="tittle-Table">
+                Таблица Фильмов
+            </h1>
+            <div>
+                <div class="wrapper-form">
+                    <div class="Panel-inputWrapper">
+                        <input type="email" class="Panel_input" value="">
+                        <label  class="Panel_label">Email</label>
+                    </div>
+                    <div class="Panel-inputWrapper">
+                        <input type="email" class="Panel_input" value="">
+                        <label  class="Panel_label">Email</label>
+                    </div>
+                    <div class="Panel-inputWrapper">
+                        <input type="email" class="Panel_input" value="">
+                        <label class="Panel_label">Email</label>
+                    </div>
+                    <div class="Panel-inputWrapper">
+                        <input type="email" class="Panel_input"  value="">
+                        <label class="Panel_label">Email</label>
+                    </div>
+                    <div class="Panel-inputWrapper">
+                        <input type="email" class="Panel_input"  value="">
+                        <label class="Panel_label">Email</label>
+                    </div>
+
+                </div>
+                <div style="position: relative; align-items: center; justify-content: space-between; margin-top: 22px; width: 100%">
+                    <form id="actionForm" action="/your-endpoint" method="POST">
+                        <input type="hidden" name="_method" value="POST" id="methodField">
+                        <button type="button" class="template-button" style="margin-right: 15%; margin-left: 10%" onclick="submitForm('POST')">Добавить</button>
+                        <button type="button" class="template-button" style="margin-right: 15%" onclick="submitForm('UPDATE')">Изменить</button>
+                        <button type="button" class="template-button" onclick="submitForm('DELETE')">Удалить</button>
+                    </form>
+                </div>
+                <script>
+                    function submitForm(method) {
+                        const form = document.getElementById('actionForm');
+                        const methodField = document.getElementById('methodField');
+                        const emailField = document.getElementById('emailField');
+
+                        // Получение значения из поля Email
+                        const emailInput = document.getElementById('emailInput');
+                        emailField.value = emailInput.value;
+
+                        // Установка метода
+                        methodField.value = method;
+
+                        // Отправка формы
+                        form.submit();
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

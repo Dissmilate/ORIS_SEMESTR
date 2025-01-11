@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Административная панель</title>
+    <link rel="stylesheet" href="styles/styleAdmin.css">
+</head>
+<body>
+<div class="container">
+    <h1>Административная панель</h1>
+
+    <!-- Форма для добавления фильма -->
+    <section class="form-section">
+        <h2>Добавить новый фильм</h2>
+        <form id="addMovieForm" action="add" method="POST">
+            <label for="title">Название:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="description">Описание:</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <label for="imdbRating">IMDB Рейтинг:</label>
+            <input type="number" id="imdbRating" name="imdbRating" step="0.1" required>
+
+            <label for="imdbVotes">IMDB Голоса:</label>
+            <input type="number" id="imdbVotes" name="imdbVotes" required>
+
+            <label for="kinopoiskRating">КиноПоиск Рейтинг:</label>
+            <input type="number" id="kinopoiskRating" name="kinopoiskRating" step="0.1" required>
+
+            <label for="kinopoiskVotes">КиноПоиск Голоса:</label>
+            <input type="number" id="kinopoiskVotes" name="kinopoiskVotes" required>
+
+            <label for="releaseDate">Дата релиза:</label>
+            <input type="date" id="releaseDate" name="releaseDate" required>
+
+            <label for="country">Страна:</label>
+            <input type="text" id="country" name="country" required>
+
+            <label for="director">Режиссер:</label>
+            <input type="text" id="director" name="director" required>
+
+            <label for="genre">Жанр:</label>
+            <input type="text" id="genre" name="genre" required>
+
+            <label for="quality">Качество:</label>
+            <input type="text" id="quality" name="quality" required>
+
+            <label for="ageRating">Возрастной рейтинг:</label>
+            <input type="text" id="ageRating" name="ageRating" required>
+
+            <label for="duration">Длительность (мин):</label>
+            <input type="number" id="duration" name="duration" required>
+
+            <label for="posterUrl">Ссылка на постер:</label>
+            <input type="text" id="posterUrl" name="posterUrl" required>
+
+            <label for="genreId">ID жанра:</label>
+            <input type="number" id="genreId" name="genreId" required>
+
+            <label for="type">Тип:</label>
+            <input type="text" id="type" name="type" required>
+
+            <button type="submit">Добавить фильм</button>
+        </form>
+    </section>
+
+    <!-- Секция для удаления фильмов -->
+    <section class="delete-section">
+        <h2>Удалить фильм</h2>
+        <form action="delete" method="POST">
+            <label for="id">ID фильма для удаления:</label>
+            <input type="number" id="id" name="id" required>
+            <button type="submit">Удалить фильм</button>
+        </form>
+    </section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+</title>
+</head>
+<body>
+
+</body>
+</html>

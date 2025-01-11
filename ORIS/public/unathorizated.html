@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Смотреть сериалы онлайн | Амедиатека | Новинки зарубежных сериалов и фильмов в HD-качестве</title>
+  <link rel="icon" href="images/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles/styleAuth.css">
+</head>
+<body>
+<div class="main-container">
+  <div class="main-left">
+    <a href="/public" class="Auth-logo-site" >
+      <img src="images/logo-amediateka.png" style="height: auto; width: 120px" width="168" height="100%">
+    </a>
+    <div class="background-container">
+      <picture class="background-picture">
+        <source media="(max-width: 1024px) and (orientation: portrait)" srcset="images/background-siteMobile.png">
+        <source media="orientation: portrait" srcset="images/background-site.png">
+        <img src="images/background-site.png" class="setting-img">
+      </picture>
+      <div class="shadow-on-page"></div>
+      <div class="shadow-on-page-bottom"></div>
+    </div>
+    <footer class="Auth-footer">
+      <div class="footer-wrapper">
+        <b class="footer-PG">18+</b>
+        <span style="padding-right: 16px; margin-left: 20px">
+                        ©&nbsp;2024&nbsp;ООО «А&nbsp;сериал»,
+                        ©&nbsp;2024 Home Box Office,
+                        Inc.Все права защищены.&nbsp;
+                        <br>
+                        HBO®, а также все относящиеся к нему логотипы и знаки обслуживания,
+                        являются собственностью Home Box Office, Inc.
+                    </span>
+        <div class="footer-support">
+          <span>Поддержка: </span>
+          <a href="mailto:help@amediateka.ru">help@amediateka.ru</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <div class="main-right">
+    <a class="auth-close-button" href="/public" onclick="goBack()">
+      <img src="images/button-close-auth.svg" height="16" width="16">
+    </a>
+    <script>
+      function goBack(){
+        window.history.back()
+      }
+    </script>
+    <div>
+      <div class="Auth-tittle">
+        <h2 class="Auth-tittle-text">Вход или регистрация</h2>
+      </div>
+      <h1 class="Auth-tittle-form">
+        Зарегистрируйтесь
+        <br>
+        или войдите в аккаунт
+      </h1>
+      <form method="post">
+        <div class="Auth-wrapper-form">
+          <h1 class="Auth-tittle-text" style="margin-bottom: 12px">Регистрация</h1>
+          <div class="Auth-inputWrapper">
+            <input type="email" class="Auth_input" id="checking-email-input" value="">
+            <label for="checking-email-input" class="Auth_label">Email</label>
+          </div>
+          <div class="Auth-inputWrapper" style="margin-top: 24px">
+            <input type="password" class="Auth_input" id="checking-password-input" value="">
+            <label for="checking-email-input" class="Auth_label">Пароль</label>
+          </div>
+          <button class="Auth-button">
+            Зарегистрироваться
+          </button>
+          <a class="Auth-registration" href="authorization.html">
+            Вход
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>

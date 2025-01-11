@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/scrtipt.js"></script>
+    <title>Смотреть фильмы в хорошем качестве без рекламы — Amediatekа</title>
+</head>
+<body>
+<header class="menu">
+    <div class="navbar">
+        <div class="navbar-items">
+            <img src="images/logo-amediateka.png" class="img-logo">
+            <a href="https://www.amediateka.ru/series" class="navbar-item-1">Сериалы</a>
+            <a href="index.html" class="navbar-item" style="color: #feba2b;">Фильмы</a>
+            <a href="https://www.amediateka.ru/kino1tv" class="navbar-item">Кино1ТВ</a>
+            <a href="https://www.amediateka.ru/collections" class="navbar-item">Коллекции</a>
+            <a href="https://www.amediateka.ru/tv" class="navbar-item">Эфир</a>
+            <a href="https://www.amediateka.ru/search" class="navbar-item">
+                <img src="images/search-icon.png" class="search-icon">
+                <a href="" class="item-loop">Поиск</a>
+            </a>
+        </div>
+        <div class="navbar-items">
+            <button class="btn-1">Ввести промокод</button>
+            <button type="button" class="btn-2" style="margin-right: 0">
+                <a target="_blank" href="authorization.html">Войти</a>
+            </button>
+            <button class="btn-3">Попробовать за 1₽</button>
+        </div>
+    </div>
+</header>
+<main class="main-container">
+    <div class="cataloge">
+        <div class="cataloge-header">
+            <a class="choice-category">Главная</a>
+            <a style="margin: 0 2px; color:#565c67; cursor: default;">/</a>
+            <a class="selected-category" style="cursor: default">Фильмы</a>
+        </div>
+        <h1>Фильмы онлайн</h1>
+        <div class="cataloge-view">
+            Лучший филмы в HD качестве. Смотрите новинки кино онлайн без рекламы на Амедиатеке
+        </div>
+        <div class="wanted-cataloge">
+            <h4>Я хочу</h4>
+            <button class="btn-item-1">поплакать</button>
+            <button class="btn-item-2">посмеяться</button>
+            <button class="btn-item-3">узнать что-то новое</button>
+            <button class="btn-item-4">криминальной драмы</button>
+            <button class="btn-item-5">отправиться в другие миры</button>
+            <button class="btn-item-6">пощекатать нервы</button>
+        </div>
+    </div>
+    <div class="filter">
+        <div class="filter-left">
+            <button class="filter-item" id="button-click-1">
+                Все жанры
+                <img src="images/button-close.png" style="height: 16px; width: 16px" class="filter-image">
+            </button>
+            <button class="filter-item" id="button-click-2">
+                Все страны
+                <img src="images/button-close.png" style="height: 16px; width: 16px" class="filter-image">
+            </button>
+            <button class="filter-item" id="button-click-3">
+                Все студии
+                <img src="images/button-close.png" style="height: 16px; width: 16px" class="filter-image">
+            </button>
+
+        </div>
+        <script>
+            const filterLeft = document.querySelector('.filter-left');
+            let activeButton = null;
+            filterLeft.addEventListener('click', function(event) {
+                const clickedButtonId = event.target.id;
+                if(activeButton && activeButton !== clickedButtonId) return;
+
+                if (clickedButtonId === 'button-click-1' || clickedButtonId === 'button-click-2' || clickedButtonId === 'button-click-3') {
+                    const img = event.target.querySelector('.filter-image');
+                    const filterId = clickedButtonId.replace('button-click', 'filter')
+
+                    if(img.src.includes('button-close')){
+                        img.src = 'images/button-open.png';
+                        document.getElementById(filterId).style.visibility = "visible";
+                        activeButton = clickedButtonId;
+                        disableOtherButtons(clickedButtonId)
+                    }
+                    else{
+                        img.src = 'images/button-close.png';
+                        document.getElementById(filterId).style.visibility = "hidden";
+                        activeButton = null;
+                        enableOtherButtons(clickedButtonId);
+                    }
+                }
+            });
+
+            function disableOtherButtons(activeButtonId) {
+                const validIds = ['button-click-1', 'button-click-2', 'button-click-3'];
+                validIds.forEach(id => {
+                    if (id !== activeButtonId) {
+                        document.getElementById(id).disabled = true;
+                    }
+                });
+            }
+
+            function enableOtherButtons(activeButtonId) {
+                const validIds = ['button-click-1', 'button-click-2', 'button-click-3'];
+                validIds.forEach(id => {
+                    if (id !== activeButtonId) {
+                        document.getElementById(id).disabled = false;
+                    }
+                });
+            }
+        </script>
+    </div>
+    <div class="Filter-Choices">
+        <ul class="filter-insert-category" id="filter-1">
+            <li class="item-list">
+                <a class="item-insert-list" style="color: #feba2b">Все жанры</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Документальный</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Мелодрама</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Фантастика</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Стендап</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Анимация</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Драма</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Музыка</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Фильмы HBO</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Вестерн</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Биография</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Исторический</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Спорт</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Фэнтези</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Короткий метр</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Военный</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Комедия</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Триллер</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Шоу</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Детектив</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Криминал</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Ужас</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Семейный</a>
+            </li>
+        </ul>
+    </div>
+    <div class="Filter-Choices">
+        <ul class="filter-insert-category" id="filter-2">
+            <li class="item-list">
+                <a class="item-insert-list" style="color: #feba2b">Все страны</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">США</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Россия</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Великобритания</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Германия</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Нидерланды</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Япония</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Пакистан</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Австралия</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Канада</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Мексика</a>
+            </li>
+        </ul>
+    </div>
+    <div class="Filter-Choices">
+        <ul class="filter-insert-category" id="filter-3">
+            <li class="item-list">
+                <a class="item-insert-list" style="color: #feba2b">Все студии</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">HBO</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">AMC</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">fifth Season</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Warner Bros. Television</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Cinemax</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Starz</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">TRO</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">Евгения Щербакова</a>
+            </li>
+            <li class="item-list">
+                <a class="item-insert-list">BBC</a>
+            </li>
+        </ul>
+    </div>
+    <div class="wrapper-cataloge" id="infinite-scroll-catalog">
+
+    </div>
+    <script>
+        const catalog = document.getElementById('infinite-scroll-catalog');
+        let isLoading = false;
+        let loadedMovies = 0;
+
+        async function handleScroll() {
+            if (isLoading) return;
+            const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+
+            if (scrollTop + clientHeight >= scrollHeight - 5) {
+                isLoading = true;
+
+                setTimeout(() => {
+                    addCards(8);
+                    isLoading = false;
+                }, 1000); // Имитируем задержку
+            }
+        }
+
+        function addCards(count = 8) {
+            for (let i = 0; i < count; i++) {
+                const card = document.createElement('a');
+                card.className = "item-cataloge";
+                card.href = 'page.html';
+                card.innerHTML = `
+                    <div class="card-item-wrapper">
+                        <picture class="item-img-template">
+                            <img class="img-template" src="images/background-films/bg-2.jpg">
+                        </picture>
+                        <div class="item-img-template-shadow"></div>
+                        <div class="item-gradient"></div>
+                        <div class="item-content-img">
+                            <img src="images/logo-films/logo-2.png" class="img-template-logo">
+                            <div class="item-content-data">
+                                <div class="content-data-i-1">
+                                    <h6>6.0</h6>
+                                </div>
+                                <div class="content-data-other">
+                                    <h6>18+</h6>
+                                </div>
+                                <div class="content-data-other">
+                                    <h6>2024</h6>
+                                </div>
+                                <div class="content-data-other">
+                                    <h6>ФЭНТЕЗИ</h6>
+                                </div>
+                                <div class="content-data-other">
+                                    <h6>КОМЕДИЯ</h6>
+                                </div>
+                                <div class="content-data-other">
+                                    <h6>МЕЛОДРАМА</h6>
+                                </div>
+                            </div>
+                            <div class="item-content-data-context">
+                                <h5>
+                                    Мальчик встречает дух веселой и отважной девушки 1920-х годов,
+                                    после чего между ними возникает необычная, но глубокая связь
+                                    сквозь десятилетия.
+                                </h5>
+                            </div>
+                            <div class="item-content-data-buttons">
+                                <button class="button-in-card-watch">
+                                    <img src="images/play-button.svg" style="height: 16px; width: 16px; margin-right: calc(10px/1.08)">
+                                    Смотреть
+                                </button>
+                                <button type="button" class="button-in-card-add">
+                                    <img src="images/add-button.svg" style="height: 16px; width: 16px; margin-right: calc(10px/1.08)">
+                                    В избранное
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+            `;
+                catalog.appendChild(card);
+                loadedMovies++;
+            }
+        }
+
+        document.addEventListener('scroll', handleScroll);
+        addCards(8);
+    </script>
+</main>
+<footer>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <img src="images/logo-amediateka.png">
+        </div>
+        <div class="menu-footer">
+            <div class="menu-category">
+                <a class="menu-category-item" href="index.html">Фильмы</a>
+                <a class="menu-category-item" href="https://www.amediateka.ru/series">Сериалы</a>
+                <a class="menu-category-item" href="https://www.amediateka.ru/kino1tv">Кино1ТВ</a>
+                <a class="menu-category-item" href="https://www.amediateka.ru/collections">Коллекция</a>
+                <a class="menu-category-item" href="https://www.amediateka.ru/trailers">Трейлеры</a>
+                <a class="menu-category-item" href="https://www.amediateka.ru/tv">Эфир</a>
+                <a class="menu-category-item" href="https://www.amediateka.ru/search">Поиск</a>
+                <a class="menu-category-item" href="https://blog.amediateka.ru/">Блог</a>
+            </div>
+            <div class="menu-feedback">
+                <a class="menu-feedback-item">Пользовательское соглашение</a>
+                <a class="menu-feedback-item">FAQ</a>
+                <a class="menu-feedback-item">Контакты</a>
+                <a class="menu-feedback-item">Поддержка</a>
+                <a class="menu-feedback-item">Партнерская программа</a>
+                <a class="menu-feedback-item">В Амедиятеке применяются рекомендательные технологии</a>
+            </div>
+            <div class="menu-app">
+                <a class="menu-app-item" href="https://apps.apple.com/ru/app/amediateka/id695094274">
+                    <img src="images/app-store.svg">
+                </a>
+                <a class="menu-app-item" href="https://play.google.com/store/apps/details?id=com.amdteka">
+                    <img src="images/google-play.svg">
+                </a>
+                <a class="menu-app-item" href="https://appgallery.cloud.huawei.com/ag/n/app/C102822551?channelId=Амедиатека&amp;id=0911bc09f53c463db55a45e2abeeee1f&amp;s=AD3F8FD5F80BD810FA8051B5F02914AA87781634F733D4054BBA629662D0F924&amp;detailType=0&amp;v=">
+                    <img src="images/app-gallery.svg">
+                </a>
+                <a class="menu-app-item" href="https://apps.rustore.ru/app/com.amdteka">
+                    <img src="images/ruStore.svg">
+                </a>
+                <a class="menu-app-item" href="https://www.amediateka.ru/big-screen">
+                    <img src="images/smartTV.svg">
+                </a>
+            </div>
+            <div class="menu-socials">
+                <a class="menu-socials-item" href="https://t.me/amediatekatv">
+                  <img src="images/telegram-logo-hover.png" class="menu-socials-item-logo-1">
+                </a>
+                <a class="menu-socials-item" href="https://vk.com/amediateka">
+                    <img src="images/vk-logo.png" class="menu-socials-item-logo-2">
+                </a>
+                <a class="menu-socials-item" href="https://youtube.com/user/Amediapremium">
+                    <img src="images/youtube-logo.png" class="menu-socials-item-logo-3">
+                </a>
+                <a class="menu-socials-item" href="https://zen.yandex.ru/amediateka">
+                    <img src="images/dzen-logo.png">
+                </a>
+            </div>
+        </div>
+        <div class="support-feedback">
+            <a class="support-item">Поддержка</a>
+            <a class="support-item-mail">help@amediateka.ru</a>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <a style="color: #565c67;">Ⓒ &nbsp;2024 ООО «А&nbsp;сериал», все права защищены. Ⓒ 2024 Home Box Office, Inc. Все права защищены.</a>
+        <a style="color: #565c67;">&nbsp;HBO®, а также все относящиеся к нему логотипы и знаки обслуживания, являются собственностью Home Box Office, Inc.</a>
+    </div>
+</footer>
+</body>
+</html>

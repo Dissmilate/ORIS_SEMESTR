@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма регистрации</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Регистрация</h2>
+    <form action="signup" method="POST">
+        <!-- Поле для ввода имени -->
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required>
+
+        <!-- Поле для ввода email -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <!-- Поле для ввода пароля -->
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" required>
+        
+
+        <!-- Кнопка отправки -->
+        <input type="submit" value="Зарегистрироваться">
+    </form>
+    <div class="error" id="error-message"></div>
+</div>
+
+<script>
+    // Пример простой валидации
+    const form = document.querySelector("form");
+    form.addEventListener("submit", function(event) {
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirm_password").value;
+
+        // Проверка совпадения паролей
+        if (password !== confirmPassword) {
+            event.preventDefault(); // Отменить отправку формы
+            document.getElementById("error-message").textContent = "Пароли не совпадают!";
+        }
+    });
+</script>
+
+</body>
+</html>
