@@ -17,9 +17,6 @@
     <None Update="Templates\Pages\Auth\login.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Templates\Pages\FilmPage\FilmPage.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="public\FilmPage.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Text;
 using System.Web;
 
 namespace HttpServerLibrary
@@ -50,6 +51,14 @@ namespace HttpServerLibrary
             else if (Successor != null)
             {
                 Successor.HandleRequest(context);
+            }
+            else
+            {
+                var file = File.ReadAllText("public/404.html");
+                context.Response.StatusCode = 404;
+                context.Response.StatusDescription = "Not Found";
+                context.Response.OutputStream.Write(Encoding.UTF8.GetBytes(file), 0, file.Length);
+                context.Response.Close();
             }
             context.Response.Close();
         }
@@ -124,9 +133,6 @@ namespace HttpServerLibrary
                     }
                     else if (context.Request.HttpMethod == "POST")
                     {
-                        // using var reader = new StreamReader(context.Request.InputStream);
-                        // string body = reader.ReadToEnd();
-                        // var data = HttpUtility.ParseQueryString(body);
                         result.Add(Convert.ChangeType(data[parameter.Name], parameter.ParameterType));
                     }
                 }

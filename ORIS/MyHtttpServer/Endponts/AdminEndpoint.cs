@@ -14,14 +14,14 @@ namespace MyHtttpServer.Endponts
         
         [Post("add")]
         public IHttpResponseResult Add(string title, string description, decimal imdbRating, int imdbVotes,
-        decimal kinopoiskRating, int kinopoiskVotes, string releaseDate, string country, string director,
+        string releaseDate, string country, string director,
         string genre, string quality, string ageRating, int duration, string posterUrl, int genreId, string type)
         {
             string connectionString =
                 @"Data Source=localhost;Initial Catalog=usersdb;User ID=sa;Password=P@ssw0rd;TrustServerCertificate=true;";
-            string query = @"INSERT INTO Movies (Title, Description, IMdbRating, IMdbVotes, KinopoiskRating, KinopoiskVotes, 
+            string query = @"INSERT INTO Movies (Title, Description, IMdbRating, IMdbVotes, 
                             ReleaseDate, Country, Director, Genre, Quality, AgeRating, Duration, PosterUrl, GenreId, Type)
-                            VALUES (@Title, @Description, @IMdbRating, @IMdbVotes, @KinopoiskRating, @KinopoiskVotes,
+                            VALUES (@Title, @Description, @IMdbRating, @IMdbVotes,
                              @ReleaseDate, @Country, @Director, @Genre, @Quality, @AgeRating, @Duration, 
                              @PosterUrl, @GenreId, @Type)";
             try
@@ -39,8 +39,6 @@ namespace MyHtttpServer.Endponts
                         command.Parameters.AddWithValue("@Description", description);
                         command.Parameters.AddWithValue("@IMdbRating", imdbRating);
                         command.Parameters.AddWithValue("@IMdbVotes", imdbVotes);
-                        command.Parameters.AddWithValue("@KinopoiskRating", kinopoiskRating);
-                        command.Parameters.AddWithValue("@KinopoiskVotes", kinopoiskVotes);
                         command.Parameters.AddWithValue("@ReleaseDate", releaseDate);
                         command.Parameters.AddWithValue("@Country", country);
                         command.Parameters.AddWithValue("@Director", director);

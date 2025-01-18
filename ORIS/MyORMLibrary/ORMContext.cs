@@ -5,7 +5,6 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Linq.Expressions;
 using System.Reflection;
-using TemplateEngine.Models;
 
 namespace MyORMLibrary;
 public class ORMContext<T> where T : class, new()
@@ -416,7 +415,7 @@ public class ORMContext<T> where T : class, new()
     public List<Movie> GetAll() 
     {
         var movies = new List<Movie>();
-        string query = "SELECT MovieID, Title, Description, IMdbRating, IMDbVotes, KinopoiskRating, KinopoiskVotes," +
+        string query = "SELECT MovieID, Title, Description, IMdbRating, IMDbVotes," +
                        " ReleaseDate, Country, Director, Genre, Quality, AgeRating, Duration, PosterUrl FROM movies";
         using (var command = _dbConnection.CreateCommand()) 
         {
@@ -432,16 +431,14 @@ public class ORMContext<T> where T : class, new()
                     movie.Description = reader.GetString(2);
                     movie.IMdbRating = reader.GetDecimal(3);
                     movie.ImdbVotes = reader.GetInt32(4);
-                    movie.KinopoiskRating = reader.GetDecimal(5);
-                    movie.KinopoiskVotes = reader.GetInt32(6);
-                    movie.ReleaseDate = reader.GetString(7);
-                    movie.Country = reader.GetString(8);
-                    movie.Director = reader.GetString(9);
-                    movie.Genre = reader.GetString(10);
-                    movie.Quality = reader.GetString(11);
-                    movie.AgeRating = reader.GetString(12);
-                    movie.Duration = reader.GetInt32(13);
-                    movie.PosterUrl = reader.GetString(14);
+                    movie.ReleaseDate = reader.GetString(5);
+                    movie.Country = reader.GetString(6);
+                    movie.Director = reader.GetString(7);
+                    movie.Genre = reader.GetString(8);
+                    movie.Quality = reader.GetString(9);
+                    movie.AgeRating = reader.GetString(10);
+                    movie.Duration = reader.GetInt32(11);
+                    movie.PosterUrl = reader.GetString(12);
                     movies.Add(movie);
                 }
             }
@@ -475,16 +472,14 @@ public class ORMContext<T> where T : class, new()
                     movie.Description = reader.GetString(2);
                     movie.IMdbRating = reader.GetDecimal(3);
                     movie.ImdbVotes = reader.GetInt32(4);
-                    movie.KinopoiskRating = reader.GetDecimal(5);
-                    movie.KinopoiskVotes = reader.GetInt32(6);
-                    movie.ReleaseDate = reader.GetString(7);
-                    movie.Country = reader.GetString(8);
-                    movie.Director = reader.GetString(9);
-                    movie.Genre = reader.GetString(10);
-                    movie.Quality = reader.GetString(11);
-                    movie.AgeRating = reader.GetString(12);
-                    movie.Duration = reader.GetInt32(13);
-                    movie.PosterUrl = reader.GetString(14);
+                    movie.ReleaseDate = reader.GetString(5);
+                    movie.Country = reader.GetString(6);
+                    movie.Director = reader.GetString(7);
+                    movie.Genre = reader.GetString(8);
+                    movie.Quality = reader.GetString(9);
+                    movie.AgeRating = reader.GetString(10);
+                    movie.Duration = reader.GetInt32(11);
+                    movie.PosterUrl = reader.GetString(12);
                     movies.Add(movie);
                 }
             }

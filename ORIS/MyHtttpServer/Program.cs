@@ -22,11 +22,9 @@ namespace MyHtttpServer
 
         static async Task Main(string[] args) 
         {
-
             var prefixes = new[] { $"http://{AppConfig.Domain}:{AppConfig.Port}/"};
             var server = new HttpServer(prefixes, AppConfig.StaticDirectoryPath);
             await server.StartAsync();
-
         }
     }
 }

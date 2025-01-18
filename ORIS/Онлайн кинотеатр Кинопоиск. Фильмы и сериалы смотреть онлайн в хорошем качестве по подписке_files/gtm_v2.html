@@ -1,0 +1,146 @@
+
+<!-- saved from url=(0108)https://yastatic.net/s3/kinopoisk-frontend/hd-www/release/gtm_v2.html?container=GTM-NKB8ZHJ&source=kinopoisk -->
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="./identify_45dd5971.js.Без названия"></script><script type="text/javascript" async="" src="./main.MWZhMDU3MTU4MA.js.Без названия" data-id="CF80N43C77UEUGLDLP2G"></script><script type="text/javascript" async="" src="./main.MWZhMDU3MTU4MQ.js.Без названия" data-id="CS93I1RC77UFDI750HUG"></script><script type="text/javascript" async="" src="./destination"></script><script type="text/javascript" async="" src="./events.js.Без названия"></script><script type="text/javascript" async="" id="tmr-code" src="./code.js.Без названия"></script><script type="text/javascript" async="" src="./events(1).js.Без названия"></script><script type="text/javascript" async="" id="topmailru-code" src="./code.js.Без названия"></script><script async="" src="./tag.js.Без названия"></script><script src="./gtm.js.Без названия" async=""></script>
+        <title>Google Tag Manager</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            (function(window) {
+                var query = window.location.search.substring(1).split('&');
+                var params = {};
+                var containerId = findQueryParam(query, 'container');
+                var layerName = findQueryParam(query, 'l') || 'dataLayer';
+                var source = findQueryParam(query, 'source');
+
+                window[layerName] = window[layerName] || [];
+
+                if (!containerId) {
+                    console.error('You must specify `container` query parameter for GTM!');
+                    return;
+                }
+
+                if (!source) {
+                    console.error('You must specify `source` query parameter!');
+                    return;
+                }
+
+                function assign(defaults, options) {
+                    var extended = {};
+                    var prop;
+
+                    for(prop in defaults) {
+                        if (Object.prototype.hasOwnProperty.call(defaults, prop) && defaults[prop] != '') {
+                            extended[prop] = defaults[prop];
+                        }
+                    }
+                    for(prop in options) {
+                        if (Object.prototype.hasOwnProperty.call(options, prop) && options[prop] != '') {
+                            extended[prop] = options[prop];
+                        }
+                    }
+                    return extended;
+                }
+
+                function addEvent(el, evt, fn) {
+                    if (el.addEventListener) {
+                        el.addEventListener(evt, fn);
+                    } else if (el.attachEvent) {
+                        el.attachEvent('on' + evt, function(evt) {
+                            fn.call(el, evt);
+                        });
+                    } else if (typeof el['on' + evt] === 'undefined' || el['on' + evt] === null) {
+                        el['on' + evt] = function(evt) {
+                            fn.call(el, evt);
+                        };
+                    }
+                }
+
+                function findElementInAnArray(array, callback) {
+                    if (!Array.isArray(array)) {
+                        return null;
+                    }
+
+                    for(var i = 0; i < array.length; i++) {
+                        var element = array[i];
+
+                        if (callback(element)) {
+                            return element;
+                        }
+                    }
+                    return null;
+                }
+
+                function findQueryParam(queryArr, paramName) {
+                    var value = findElementInAnArray(queryArr, function(param) {
+                        var key = param.split('=')[0];
+                        return typeof key === 'string' && decodeURIComponent(key).toLowerCase() === paramName;
+                    });
+                    if (value) {
+                        value = value.split('=')[1]
+                    }
+                    return value;
+                }
+
+                (function addGTMScript() {
+                    var head = document.querySelector('head');
+                    var element = document.createElement('script');
+                    element.src = 'https://www.googletagmanager.com/gtm.js?id=' + containerId + '&l=' + layerName;
+                    element.async = true;
+                    head.insertAdjacentElement('afterbegin', element);
+                })();
+
+                window[layerName].push({
+                    event: 'gtm.js',
+                    'gtm.start': new Date().getTime(),
+                });
+
+                for(var i = 0; i < query.length; ++i) {
+                    var getVar = query[i].split('=');
+                    var key = getVar[0];
+                    var value = getVar[1];
+
+                    params[decodeURIComponent(key)] = typeof value !== 'undefined'
+                        ? decodeURIComponent(value)
+                        : '';
+                }
+
+                window[layerName].push(params);
+                addEvent(window, 'message', function(message) {
+                    try {
+                        if (typeof message.data !== 'string' || !message.data.startsWith(source)) {
+                            // Skip message, The source does not exist or does not match
+                            return;
+                        }
+                        var re = new RegExp("^" + source + "\.");
+                        var data = message.data.replace(re, '');
+                        var messageData = assign(params, JSON.parse(data));
+                        window[layerName].push(messageData);
+                    } catch(e) {
+                        console.error('Error while receive GTM data', message.data, message.source, e);
+                    }
+                });
+            })(window);
+        </script>
+    <script type="text/javascript" async="" src="./openapi.js.Без названия"></script></head>
+    <body>
+
+
+<script type="text/javascript" id="" charset="">(function(b,e,f,g,c,a,d){b[c]=b[c]||function(){(b[c].a=b[c].a||[]).push(arguments)};b[c].l=1*new Date;for(a=0;a<document.scripts.length;a++)if(document.scripts[a].src===g)return;a=e.createElement(f);d=e.getElementsByTagName(f)[0];a.async=1;a.src=g;d.parentNode.insertBefore(a,d)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(73489426,"init",{clickmap:!0,trackLinks:!0,accurateTrackBounce:!0});</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/73489426" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<script type="text/javascript" id="" charset="">!function(){var a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="https://vk.com/js/api/openapi.js?169";a.onload=function(){VK.Retargeting.Init("VK-RTRG-1370373-RaDb");VK.Retargeting.Hit()};document.head.appendChild(a)}();</script><noscript><img src="https://vk.com/rtrg?p=VK-RTRG-1370373-RaDb" style="position:fixed; left:-999px;" alt=""></noscript>
+<script type="text/javascript" id="" charset="">var _tmr=window._tmr||(window._tmr=[]);_tmr.push({id:"3250228",type:"pageView",start:(new Date).getTime(),pid:"USER_ID"});(function(c,e,a){if(!c.getElementById(a)){var b=c.createElement("script");b.type="text/javascript";b.async=!0;b.id=a;b.src="https://top-fwz1.mail.ru/js/code.js";a=function(){var d=c.getElementsByTagName("script")[0];d.parentNode.insertBefore(b,d)};"[object Opera]"==e.opera?c.addEventListener("DOMContentLoaded",a,!1):a()}})(document,window,"topmailru-code");</script><noscript><div>
+<img src="https://top-fwz1.mail.ru/counter?id=3250228;js=na" style="border:0;position:absolute;left:-9999px;" alt="Top.Mail.Ru">
+</div></noscript>
+
+<script type="text/javascript" id="" charset="">!function(d,g,e){d.TiktokAnalyticsObject=e;var a=d[e]=d[e]||[];a.methods="page track identify instances debug on off once ready alias group enableCookie disableCookie".split(" ");a.setAndDefer=function(b,c){b[c]=function(){b.push([c].concat(Array.prototype.slice.call(arguments,0)))}};for(d=0;d<a.methods.length;d++)a.setAndDefer(a,a.methods[d]);a.instance=function(b){b=a._i[b]||[];for(var c=0;c<a.methods.length;c++)a.setAndDefer(b,a.methods[c]);return b};a.load=function(b,c){var f="https://analytics.tiktok.com/i18n/pixel/events.js";
+a._i=a._i||{};a._i[b]=[];a._i[b]._u=f;a._t=a._t||{};a._t[b]=+new Date;a._o=a._o||{};a._o[b]=c||{};c=document.createElement("script");c.type="text/javascript";c.async=!0;c.src=f+"?sdkid\x3d"+b+"\x26lib\x3d"+e;b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(c,b)};a.load("CF80N43C77UEUGLDLP2G");a.page()}(window,document,"ttq");</script>
+<script type="text/javascript" id="" charset="">var _tmr=window._tmr||(window._tmr=[]);_tmr.push({id:"3544834",type:"pageView",start:(new Date).getTime(),pid:"USER_ID"});(function(c,e,a){if(!c.getElementById(a)){var b=c.createElement("script");b.type="text/javascript";b.async=!0;b.id=a;b.src="https://top-fwz1.mail.ru/js/code.js";a=function(){var d=c.getElementsByTagName("script")[0];d.parentNode.insertBefore(b,d)};e.opera=="[object Opera]"?c.addEventListener("DOMContentLoaded",a,!1):a()}})(document,window,"tmr-code");</script>
+<noscript><div><img src="https://top-fwz1.mail.ru/counter?id=3544834;js=na" style="position:absolute;left:-9999px;" alt="Top.Mail.Ru"></div></noscript>
+
+<script type="text/javascript" id="" charset="">ym(73489426,"getClientID",function(a){window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:"clientIdIsReady",client_id:String(a)})});</script>
+<script type="text/javascript" id="" charset="">!function(d,h,e){d.TiktokAnalyticsObject=e;var a=d[e]=d[e]||[];a.methods="page track identify instances debug on off once ready alias group enableCookie disableCookie holdConsent revokeConsent grantConsent".split(" ");a.setAndDefer=function(b,c){b[c]=function(){b.push([c].concat(Array.prototype.slice.call(arguments,0)))}};for(d=0;d<a.methods.length;d++)a.setAndDefer(a,a.methods[d]);a.instance=function(b){b=a._i[b]||[];for(var c=0;c<a.methods.length;c++)a.setAndDefer(b,a.methods[c]);return b};a.load=
+function(b,c){var f="https://analytics.tiktok.com/i18n/pixel/events.js",g=c&&c.partner;a._i=a._i||{};a._i[b]=[];a._i[b]._u=f;a._i[b]._partner=g||"GoogleTagManagerClient";a._t=a._t||{};a._t[b]=+new Date;a._o=a._o||{};a._o[b]=c||{};a._partner=a._partner||"GoogleTagManagerClient";c=document.createElement("script");c.type="text/javascript";c.async=!0;c.src=f+"?sdkid\x3d"+b+"\x26lib\x3d"+e;b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(c,b)};a.load("CS93I1RC77UFDI750HUG");a.page()}(window,
+document,"ttq");</script><iframe height="0" width="0" style="display: none; visibility: hidden;" src="./saved_resource.html"></iframe>
+<script type="text/javascript" id="" charset="">!function(c,d){function k(a,b,g){b=b||"\x26";g=g||"\x3d";var f=[],h;for(h in a)a.hasOwnProperty(h)&&f.push(h+g+encodeURIComponent(a[h]));return f.join(b)}function e(a,b){return(a=a.cookie.match("(^|;) ?"+b+"\x3d([^;]*)(;|$)"))?decodeURIComponent(a[2]):null}var l;var m=document.domain;var n={tail256:document.referrer||"unknown"};void 0!==(l=function(a){var b={};if(a){a=a.split("\x26");for(var g in a)if(a.hasOwnProperty(g)){var f=a[g].split("\x3d");void 0!==f[0]&&void 0!==f[1]&&(b[f[0]]=decodeURIComponent(f[1]))}}return b}(window.location.search.substring(1))).adrclid&&
+(c.fsid=l.adrclid);null!==e(document,"adrcid")&&(c.cid=e(document,"adrcid"));d&&d.id&&null!==e(document,d.id)&&(c.suid=m+"_"+encodeURIComponent(e(document,d.id)));d&&d.gid1?c.gid1=d.gid1:null!==e(document,"_ga")&&(c.gid1=encodeURIComponent(e(document,"_ga")));d&&d.yid1?c.yid1=d.yid1:null!==e(document,"_ym_uid")&&(c.yid1=encodeURIComponent(e(document,"_ym_uid")));c.loc=encodeURIComponent(window.location.href);c.custom&&(c.custom=k(c.custom,";"));(function(a,b){a="https://ad.adriver.ru/cgi-bin/rle.cgi?"+
+a+"\x26rnd\x3d![rnd]"+(b?"\x26"+b:"");(a=a.split("![rnd]").join(~~(1E6*Math.random())),document.createElement&&document.body)?(b=document.createElement("img"),b.style.position="absolute",b.style.display="none",b.style.width=b.style.height="0px",b.setAttribute("referrerpolicy","no-referrer-when-downgrade"),b.src=a,document.body.appendChild(b)):(b=new Image,b.setAttribute("referrerpolicy","no-referrer-when-downgrade"),b.src=a);a=void 0;!a})(k(c),k(n))}({sid:229423,bt:62},{id:"",gid1:"",yid1:""});</script><iframe height="0" width="0" src="./activityi.html" style="display: none; visibility: hidden;"></iframe><iframe allow="join-ad-interest-group" data-tagging-id="DC-12392359/count0/webkp000+standard" data-load-time="1736523323817" height="0" width="0" src="./activityi(1).html" style="display: none; visibility: hidden;"></iframe><img referrerpolicy="no-referrer-when-downgrade" src="./rle.cgi" style="position: absolute; display: none; height: 0px; width: 0px;"></body></html>

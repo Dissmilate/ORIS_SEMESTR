@@ -9,8 +9,6 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TemplateEngine.Models;
-
 namespace MyHtttpServer.Endponts
 {
     public class FilmPageEndpoint : BaseEndpoint
@@ -46,21 +44,19 @@ namespace MyHtttpServer.Endponts
                                     movieInfo.Description = reader.GetString(2);
                                     movieInfo.IMdbRating = reader.GetDecimal(3);
                                     movieInfo.ImdbVotes = reader.GetInt32(4);
-                                    movieInfo.KinopoiskRating = reader.GetDecimal(5);
-                                    movieInfo.KinopoiskVotes = reader.GetInt32(6);
-                                    movieInfo.ReleaseDate = reader.GetString(7);
-                                    movieInfo.Country = reader.GetString(8);
-                                    movieInfo.Director = reader.GetString(9);
-                                    movieInfo.Genre = reader.GetString(10);
-                                    movieInfo.Quality = reader.GetString(11);
-                                    movieInfo.AgeRating = reader.GetString(12);
-                                    movieInfo.Duration = reader.GetInt32(13);
-                                    movieInfo.PosterUrl = reader.GetString(14);
+                                    movieInfo.ReleaseDate = reader.GetString(5);
+                                    movieInfo.Country = reader.GetString(6);
+                                    movieInfo.Director = reader.GetString(7);
+                                    movieInfo.Genre = reader.GetString(8);
+                                    movieInfo.Quality = reader.GetString(9);
+                                    movieInfo.AgeRating = reader.GetString(10);
+                                    movieInfo.Duration = reader.GetInt32(11);
+                                    movieInfo.PosterUrl = reader.GetString(12);
                                 }
                             }
                             else
                             {
-                                return Redirect("Dashboard");
+                                return Redirect("dashboard");
                             }
                         }
                     }

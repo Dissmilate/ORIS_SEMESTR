@@ -20,10 +20,6 @@ namespace Models
 
         public int ImdbVotes { get; set; }
 
-        public decimal KinopoiskRating { get; set; }
-        
-        public int KinopoiskVotes { get; set; }
-
         public string PosterUrl { get; set; }
 
         public string Country { get; set; }

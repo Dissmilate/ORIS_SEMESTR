@@ -1,7 +1,7 @@
 ﻿using Models;
 using MyHtttpServer.Core.Templator;
 using System.Text.RegularExpressions;
-using TemplateEngine.Models;
+using MyHtttpServer.Core.Templator;
 
 namespace MyHtttpServer.Core.Templator
 {
@@ -29,10 +29,7 @@ namespace MyHtttpServer.Core.Templator
                                     <div class=""b-content__inline_item-cover"">
                                            <a href='/watch?movieId={movie.MovieId}'>
                                             <img src=""{movie.PosterUrl}"" height=""250"" width=""166"" alt=""Смотреть {movie.Title} онлайн в HD качестве {movie.Quality}""/>
-                                            <span class=""cat films"">
-                                                <i class=""entity"">Фильм</i>
-                                                <i class=""icon""></i>
-                                            </span>
+                                           
                                             <i class=""i-sprt play""></i>
                                         </a>
                                         <i class=""trailer show-trailer"" data-id=""76764"" data-full=""1"">
@@ -56,8 +53,6 @@ namespace MyHtttpServer.Core.Templator
                 .Replace("@@ImdbRating@@", movie.IMdbRating.ToString())
                 .Replace("@@ImdbVotes@@", movie.ImdbVotes.ToString())
                 .Replace("@@Description@@", movie.Description)
-                .Replace("@@KinopoiskRating@@", movie.KinopoiskRating.ToString())
-                .Replace("@@KinopoiskVotes@@", movie.KinopoiskVotes.ToString())
                 .Replace("@@ReleaseDate@@", movie.ReleaseDate)
                 .Replace("@@Country@@", movie.Country)
                 .Replace("@@Director@@", movie.Director)
